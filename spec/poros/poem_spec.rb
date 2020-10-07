@@ -15,14 +15,9 @@ describe Poem do
     }
 
     poem = Poem.new(data)
+    poem.sentiment_analysis
     expect(poem.title).to eq("Not at Home to Callers")
     expect(poem.author).to eq("Emily Dickinson")
-    expect(poem.lines).to eq([
-        "Not at Home to Callers",
-        "Says the Naked Tree --",
-        "Bonnet due in April --",
-        "Wishing you Good Day --"
-      ])
-    expect(poem.linecount).to eq("4")
+    expect(poem.lines).to eq("Not at Home to Callers, Says the Naked Tree --, Bonnet due in April --, Wishing you Good Day --")
   end
 end

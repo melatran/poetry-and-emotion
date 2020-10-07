@@ -2,8 +2,17 @@ require 'rails_helper'
 
 describe WatsonService do
   it ".analyze_poem" do
-    poem_lines = "Not at Home to Callers, Says the Naked Tree, Bonnet due in April --, Wishing you Good Day --"
-    poem = Poem.new(author: 'Emily Dickinson', title: 'Not at Home to Callers', lines: poem_lines, linecount:'4')
+    data = {
+      title: "Not at Home to Callers",
+      author: "Emily Dickinson",
+      lines: [
+        "Not at Home to Callers",
+        "Says the Naked Tree --",
+        "Bonnet due in April --",
+        "Wishing you Good Day --"
+      ]
+    }
+    poem = Poem.new(data)
     service = WatsonService.new
     tone_analyzer = service.analyze_poem(poem.lines)
     

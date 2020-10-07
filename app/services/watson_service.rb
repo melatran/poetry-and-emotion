@@ -4,7 +4,7 @@ class WatsonService
       req.params['version'] = "2017-09-21"
       req.params['text'] = lines
     end
-    JSON.parse(response.body, symbolize_names: true)
+    json = JSON.parse(response.body, symbolize_names: true)
   end
 
   private
