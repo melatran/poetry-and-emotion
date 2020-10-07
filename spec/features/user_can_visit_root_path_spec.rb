@@ -15,7 +15,12 @@ describe "User can visit root path" do
     click_on 'Get Poems'
 
     expect(current_path).to eq("/search")
-    
+
+    within(first(".poem")) do
+      expect(page).to have_content("Written By: Emily Dickinson")
+      expect(page).to have_content("Poem Tone Analysis: Joy")
+      expect(page).to have_content("Not at Home to Callers, Says the Naked Tree --, Bonnet due in April --, Wishing you Good Day --")
+    end
   end
 end
 

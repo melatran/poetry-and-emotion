@@ -1,0 +1,10 @@
+<h1><center>Poem Results</center></h1>
+
+<% @poem_info.each do |poem| %>
+  <ul class="poem" %>
+    <h3><i><b><%= poem.title %></i></b></h3>
+    <p>Written By: <%= poem.author %></p>
+    <p>Poem Tone Analysis: <%= poem.tones %></p>
+    <p><%= poem.lines %></p>
+  </ul>
+<% end %>
