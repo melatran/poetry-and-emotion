@@ -15,6 +15,7 @@ describe "User can visit root path" do
     click_on 'Get Poems'
 
     expect(current_path).to eq("/search")
+    
   end
 end
 
